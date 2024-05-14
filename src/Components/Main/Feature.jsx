@@ -5,6 +5,9 @@ const Feature = () => {
 
       const [feature , setFeature] = useState([])
 
+      const [dataLength , setDataLength] = useState(4)
+
+
           useEffect(()=>{
                      fetch('jobs.json')
                      .then(res=> res.json())
@@ -18,12 +21,17 @@ const Feature = () => {
              <p className="pb-10">Explore thousands of job opportunities with all the information you need. Its your future</p>
              </div>
 
-             <div className=" grid gap-5 md:grid-cols-2  justify-center items-center ">
+             <div className=" grid gap-5 md:grid-cols-2 my-5  justify-center items-center ">
                  {
-                    feature.map(jobs => <FeatureCard key={jobs.id} jobs={jobs}></FeatureCard>)
+                    feature.slice(0, dataLength).map(jobs => <FeatureCard key={jobs.id} jobs={jobs}></FeatureCard>)
                  }
                 
              </div>
+            <div className={dataLength === feature.length && 'hidden'}>
+            <button 
+            onClick={()=>setDataLength(feature.length)}
+            className="btn  text-[20px] font-semibold text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF] hover:from-pink-500 hover:to-yellow-400">Show all data</button>
+            </div>
         </div>
     );
 };
