@@ -18,7 +18,7 @@ const Feature = () => {
              <p className="pb-10">Explore thousands of job opportunities with all the information you need. Its your future</p>
              </div>
 
-             <div>
+             <div className=" grid gap-5 md:grid-cols-2  justify-center items-center ">
                  {
                     feature.map(jobs => <FeatureCard key={jobs.id} jobs={jobs}></FeatureCard>)
                  }

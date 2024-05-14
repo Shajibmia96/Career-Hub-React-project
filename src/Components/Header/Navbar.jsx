@@ -79,7 +79,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{Links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="">Button</a>
+          <a className="">Star Applying</a>
         </div>
       </div>
     </div>
