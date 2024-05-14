@@ -27,7 +27,7 @@ const Feature = () => {
                  }
                 
              </div>
-            <div className={dataLength === feature.length && 'hidden'}>
+            <div className= {dataLength===feature.length && 'hidden'}>
             <button 
             onClick={()=>setDataLength(feature.length)}
             className="btn  text-[20px] font-semibold text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF] hover:from-pink-500 hover:to-yellow-400">Show all data</button>

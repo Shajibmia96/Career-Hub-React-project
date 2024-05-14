@@ -5,6 +5,7 @@ import AppliedJobs from "../Pages/AppliedJobs";
 import Blog from "../Pages/Blog";
 import Error from "../Components/Error/Error";
 import Jobs from "../Pages/Jobs";
+import JobDetails from "../Components/JobDetails/JobDetails";
 
 const myCreateRoute = createBrowserRouter([
     {
@@ -17,8 +18,14 @@ const myCreateRoute = createBrowserRouter([
                 element: <Statistics></Statistics>
             },
             {
-                path : 'Jobs',
+                path : '/Jobs',
                 element: <Jobs></Jobs>
+            },
+            {
+                path : "/job/:id",
+                element: <JobDetails></JobDetails>,
+                loader : () => fetch("../../public/jobs.json")
+                
             },
             {
                 path : "/AppliedJobs",
